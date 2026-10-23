@@ -1,0 +1,1 @@
+for f in mash_results/*.screen.sorted; do sample=$(basename "$f" .screen); topline=$(grep -v '^#' "$f" | sort -k2,2nr | sed -n '1p' || true); echo "$sample: ${topline:-NO_HITS}"; done > mash_results_combined/all_with_sample.screen.sorted
